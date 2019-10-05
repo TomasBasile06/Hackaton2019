@@ -1,17 +1,17 @@
 import { createStackNavigator } from 'react-navigation-stack';
 import Home from '../Screens/Home/container';
 import Login from '../Screens/Login/container'
-import Registro from '../Screens/Registro/container';
+import ChoosePictureStep from '../Screens/ChoosePictureStep/container';
 
 
 const commonStack = createStackNavigator({
-  Registro:Registro,
+  ChoosePictureStep:ChoosePictureStep,
   Login: Login,
   Home: Home,
 
 
 }, {
-  initialRouteName: 'Registro',
+  initialRouteName: 'ChoosePictureStep',
 });
 
 export default commonStack;
