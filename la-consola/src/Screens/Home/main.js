@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, StatusBar, Text, ScrollView,Image,TouchableOpacity, Linking,FeatherIcon } from 'react-native';
+import { View, StyleSheet, StatusBar, Text, ScrollView,Image,TouchableOpacity,Button, Linking,FeatherIcon } from 'react-native';
 import styles from './styles';
 
 
@@ -12,8 +12,15 @@ class Home extends Component {
     return(
       <ScrollView style={styles.fondo}>
         <View  style={styles.container}>
-          <TouchableOpacity style={[styles.card]}>
-            <View> HOLA
+          <TouchableOpacity>
+            <View> 
+              <Text>Para comenzar</Text>
+              <Button 
+                title="Elige una foto"
+                />
+              <Button 
+                title="Tomar una foto"
+                />
             </View>     
           </TouchableOpacity>
         </View>
