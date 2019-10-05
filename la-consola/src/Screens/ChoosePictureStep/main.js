@@ -51,14 +51,7 @@ class ChoosePictureStep extends Component {
 						/>
 
 						<Button onPress={this._takePhoto} title="Tomar una foto" />
-						{this.state.googleResponse && (
-							<FlatList
-								data={this.state.googleResponse.responses[0].labelAnnotations}
-								extraData={this.state}
-								keyExtractor={this._keyExtractor}
-								renderItem={({ item }) => <Text>Item: {item.description}</Text>}
-							/>
-						)}
+
 						{this._maybeRenderImage()}
 						{this._maybeRenderUploadingOverlay()}
 					</View>

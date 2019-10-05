@@ -18,7 +18,7 @@ class Home extends Component {
         <View style={styles.container}>
           <View>
             {items.map(item => {
-              return <Text>{item.description}</Text>
+              <Text>{item.description}</Text>
             })}
           </View>
         </View>
