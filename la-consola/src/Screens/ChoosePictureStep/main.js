@@ -40,17 +40,17 @@ class ChoosePictureStep extends Component {
 				>
 					<View style={styles.getStartedContainer}>
 						{image ? null : (
-							<Text style={styles.getStartedText}>Google Cloud Vision</Text>
+							<Text style={styles.getStartedText}>Evalúa una imagen</Text>
 						)}
 					</View>
 
 					<View style={styles.helpContainer}>
 						<Button
 							onPress={this._pickImage}
-							title="Pick an image from camera roll"
+							title="Cargar imagen desde dispositivo"
 						/>
 
-						<Button onPress={this._takePhoto} title="Take a photo" />
+						<Button onPress={this._takePhoto} title="Tomar una foto" />
 						{this.state.googleResponse && (
 							<FlatList
 								data={this.state.googleResponse.responses[0].labelAnnotations}
@@ -114,7 +114,7 @@ class ChoosePictureStep extends Component {
 				<Button
 					style={{ marginBottom: 10 }}
 					onPress={() => this.submitToGoogle()}
-					title="Analyze!"
+					title="OK !"
 				/>
 
 				<View
@@ -135,18 +135,6 @@ class ChoosePictureStep extends Component {
 					onLongPress={this._share}
 					style={{ paddingVertical: 10, paddingHorizontal: 10 }}
 				/>
-
-				<Text>Raw JSON:</Text>
-
-				{googleResponse && (
-					<Text
-						onPress={this._copyToClipboard}
-						onLongPress={this._share}
-						style={{ paddingVertical: 10, paddingHorizontal: 10 }}
-					>
-						JSON.stringify(googleResponse.responses)}
-					</Text>
-				)}
 			</View>
 		);
 	};
@@ -198,7 +186,7 @@ class ChoosePictureStep extends Component {
 			}
 		} catch (e) {
 			console.log(e);
-			alert('Upload failed, sorry :(');
+			alert('Ocurrió un error');
 		} finally {
 			this.setState({ uploading: false });
 		}
