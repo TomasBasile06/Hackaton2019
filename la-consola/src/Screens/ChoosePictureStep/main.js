@@ -102,6 +102,8 @@ class ChoosePictureStep extends Component {
 			return;
 		}
 
+    const {navigate} = this.props.navigation;
+
 		return (
 			<View
 				style={{
@@ -115,6 +117,12 @@ class ChoosePictureStep extends Component {
 					style={{ marginBottom: 10 }}
 					onPress={() => this.submitToGoogle()}
 					title="OK !"
+				/>
+
+        <Button
+					style={{ marginBottom: 10 }}
+					onPress={() => navigate('Home', { items: this.state.googleResponse.responses[0].labelAnnotations})}
+					title="Mostrar resultados."
 				/>
 
 				<View
