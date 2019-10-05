@@ -7,12 +7,12 @@ import {
 } from 'react-navigation';
 import store from './store';
 import {createDrawerNavigator} from 'react-navigation-drawer';
-import Registro from './src/Screens/Registro/container';
+import ChoosePictureStep from './src/Screens/ChoosePictureStep/container';
 import commonStack from './src/Navigation/commonStacks';
 
 class App extends Component {
   render() {
-    return <Provider store={store}> 
+    return <Provider store={store}>
               <AppContainer/>
             </Provider>;
   }
@@ -29,9 +29,8 @@ const AppDrawerNavigator = createDrawerNavigator({
 });
 
 const AppSwitchNavigator = createSwitchNavigator({
-  Welcome: { screen: Registro },
+  Welcome: { screen: ChoosePictureStep },
   Dashboard: { screen: AppDrawerNavigator }
 });
 
 const AppContainer = createAppContainer(AppSwitchNavigator);
-
