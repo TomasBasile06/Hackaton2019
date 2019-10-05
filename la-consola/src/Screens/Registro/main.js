@@ -11,10 +11,12 @@ class Registro extends Component {
     return(
       <ScrollView>
         <View style={styles.container}>
-        <Text>hola</Text>
+        <Text>Bienvenidos a la app de Hackatrix</Text>
+          <Button 
+            title="REGISTRARSE"
+            onPress={() => this.props.navigation.navigate('Home')}/>
         </View>
-      </ScrollView>
-      
+      </ScrollView>   
     )
   }
 }
